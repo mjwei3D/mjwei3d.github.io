@@ -59,27 +59,84 @@
 
 
       <tr onmouseout="acmo_stop()" onmouseover="acmo_start()" bgcolor="#ffffd0">
+
         <td style="padding:16px;width:20%;vertical-align:middle">
           <div class="one">
-            <div class="two" id='acmo_image'><video width=100% height=100% muted autoplay loop>
-              <source src="images/acmo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video></div>
-            <img src='images/acmo.png' width="160">
+              <img src='images/acmo.png' width="160" onclick="showModal_acmo()" style="cursor:pointer;">
           </div>
-          <script type="text/javascript">
-            function acmo_start() {
-              document.getElementById('acmo_image').style.opacity = "1";
-            }
       
-            function acmo_stop() {
-              document.getElementById('acmo_image').style.opacity = "0";
-            }
-            acmo_stop()
+          <!-- 模态框结构 -->
+          <div id="myModal" class="modal">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+          </div>
+      
+          <script type="text/javascript">
+              function acmo_start() {
+                  document.getElementById('acmo_image').style.opacity = "1";
+              }
+      
+              function acmo_stop() {
+                  document.getElementById('acmo_image').style.opacity = "0";
+              }
+              acmo_stop();
+      
+              function showModal_acmo() {
+                  var modal = document.getElementById("myModal");
+                  var modalImg = document.getElementById("img01");
+                  var captionText = document.getElementById("caption");
+                  modal.style.display = "block";
+                  modalImg.src = 'images/acmo.png'; 
+                  captionText.innerHTML = ''; 
+              }
+      
+              function closeModal() {
+                  document.getElementById("myModal").style.display = "none";
+              }
           </script>
-        </td>
+          <style>
+              .modal {
+                  display: none; 
+                  position: fixed;
+                  z-index: 1000; 
+                  padding-top: 100px;
+                  left: 0;
+                  top: 0;
+                  width: 100%;
+                  height: 100%;
+                  overflow: auto;
+                  background-color: rgb(0,0,0);
+                  background-color: rgba(0,0,0,0.9);
+              }
+      
+              .modal-content {
+                  margin: auto;
+                  display: block;
+                  width: 80%;
+                  max-width: 700px;
+              }
+      
+              .close {
+                  position: absolute;
+                  top: 15px;
+                  right: 35px;
+                  color: #f1f1f1;
+                  font-size: 40px;
+                  transition: 0.3s;
+              }
+      
+              .close:hover,
+              .close:focus {
+                  color: #bbb;
+                  text-decoration: none;
+                  cursor: pointer;
+              }
+          </style>
+      </td>
+
         <td style="padding:8px;width:80%;vertical-align:middle">
-          <a href="https://x.com/your_tweet_link">
+          <a href="https://mjwei3d.github.io/ACMo/">
             <span class="papertitle">ACMo: Attribute Controllable Motion Generation</span>
           </a>
           <br>
@@ -91,7 +148,7 @@
           <br>
           <a href="https://x.com/your_tweet_link">arXiv</a>
           /
-          <a href="https://arxiv.org/abs/your_arxiv_link">Github</a>
+          <a href="https://github.com/MingjieWe/ACMo">Github</a>
           <p></p>
           <p>
             We present ACMo, an controllable stylized text-to-motion generation architecture, effectively addressing motions beyond dataset representation and multi-attribute control.
@@ -102,23 +159,79 @@
     <tr onmouseout="pgformer_stop()" onmouseover="pgformer_start()">
       <td style="padding:16px;width:20%;vertical-align:middle">
         <div class="one">
-          <div class="two" id='pgformer_image'><video width=100% height=100% muted autoplay loop>
-            <source src="images/pgformer.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video></div>
-          <img src='images/pgformer.png' width="160">
+            <img src='images/pgformer.png' width="160" onclick="showModal_pgformer()" style="cursor:pointer;">
         </div>
-        <script type="text/javascript">
-          function pgformer_start() {
-            document.getElementById('pgformer_image').style.opacity = "1";
-          }
     
-          function pgformer_stop() {
-            document.getElementById('pgformer_image').style.opacity = "0";
-          }
-          pgformer_stop()
+        <!-- 模态框结构 -->
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+    
+        <script type="text/javascript">
+            function acmo_start() {
+                document.getElementById('acmo_image').style.opacity = "1";
+            }
+    
+            function acmo_stop() {
+                document.getElementById('acmo_image').style.opacity = "0";
+            }
+            acmo_stop();
+    
+            function showModal_pgformer() {
+                var modal = document.getElementById("myModal");
+                var modalImg = document.getElementById("img01");
+                var captionText = document.getElementById("caption");
+                modal.style.display = "block";
+                modalImg.src = 'images/pgformer.png'; 
+                captionText.innerHTML = ''; 
+            }
+    
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+            }
         </script>
-      </td>
+        <style>
+            .modal {
+                display: none; 
+                position: fixed;
+                z-index: 1000; 
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0,0.9);
+            }
+    
+            .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+            }
+    
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                transition: 0.3s;
+            }
+    
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+    </td>
+
       <td style="padding:8px;width:80%;vertical-align:middle">
         <strong class="papertitle">Learning Pyramid-structured Long-range Dependencies for 3D Human Pose Estimation</strong>
         <br>
